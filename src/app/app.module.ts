@@ -4,10 +4,12 @@ import {NgModule} from '@angular/core';
 import {TrainingModule} from './training/training.module';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from "./app.routing.module";
+import { MainBarComponent } from './main-bar/main-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainBarComponent
   ],
   imports: [
     BrowserModule,

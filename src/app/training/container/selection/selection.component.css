@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto');
+
+.selection-hidden {
+  color: white;
+}
+
+.selection__empty {
+  border: none !important;
+}
+
+.selection-right {
+  background-color: green !important;
+  transform: scale(0);
+}
+
+.selection-wrong {
+  background-color: red !important;
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.selection {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  max-width: 80%;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 gray,
+  0 2px 6px 0 gray;
+  background-color: white;
+  margin: 30px auto 0 auto;
+  color: #454545;
+  padding: 20px;
+}
+
+.selection__title-main {
+  margin: 0;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  color: #59595a;
+  border-bottom: 1px solid #59595a;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.selection__checklist {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin: 60px 0;
+}
+
+.selection__check-word {
+  border: 1px solid gray;
+  padding: 4px;
+  width: 48px;
+  text-align: center;
+  margin: 2px 2px;
+  border-radius: 2px;
+  color: #CA5727;
+}
+
+.selection__btn-sound {
+  background-color: #2016AB;
+  width: 96px;
+  height: 96px;
+  padding: 10px;
+  border-radius: 4px;
+  background-image: url("http://res.cloudinary.com/dq2s2ibrg/image/upload/v1501702100/volume_white_xs1cyj.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 gray,
+  0 2px 6px 0 gray;
+}
+
+.selection__pick-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  margin: 60px 0 60px 0;
+}
+
+.selection__pick-word {
+  padding: 4px;
+  width: 48px;
+  text-align: center;
+  margin: 4px 4px;
+  color: white;
+  background-color: #CA5727;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 1px 2px 0 gray,
+  0 2px 6px 0 gray;
+}

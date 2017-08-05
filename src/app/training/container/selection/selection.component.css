@@ -85,14 +85,11 @@
 }
 
 .selection__btn-sound {
-  background-color: #2016AB;
   width: 96px;
   height: 96px;
   padding: 10px;
   border-radius: 4px;
-  background-image: url("http://res.cloudinary.com/dq2s2ibrg/image/upload/v1501702100/volume_white_xs1cyj.png");
-  background-position: center;
-  background-repeat: no-repeat;
+  background: #D8100D url("http://res.cloudinary.com/dq2s2ibrg/image/upload/v1501702100/volume_white_xs1cyj.png") no-repeat center;
   cursor: pointer;
   box-shadow: 0 1px 2px 0 gray,
   0 2px 6px 0 gray;

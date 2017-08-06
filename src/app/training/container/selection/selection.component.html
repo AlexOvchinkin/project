@@ -1,39 +1,24 @@
 <section class="selection">
   <p class="selection__title-main">Набери озвученное слово, выбирая буквы в правильном порядке</p>
   <ul class="selection__checklist">
-    <li class="selection__check-word  selection-hidden" id='letter-0'>W</li>
-    <li class="selection__check-word  selection-hidden" id='letter-1'>E</li>
-    <li class="selection__check-word  selection-hidden" id='letter-2'>L</li>
-    <li class="selection__check-word  selection-hidden" id='letter-3'>C</li>
-    <li class="selection__check-word  selection-hidden" id='letter-4'>O</li>
-    <li class="selection__check-word  selection-hidden" id='letter-5'>M</li>
-    <li class="selection__check-word  selection-hidden" id='letter-6'>E</li>
-    <li class="selection__check-word  selection__empty" id='letter-7'></li>
-    <li class="selection__check-word  selection-hidden" id='letter-8'>B</li>
-    <li class="selection__check-word  selection-hidden" id='letter-9'>A</li>
-    <li class="selection__check-word  selection-hidden" id='letter-10'>C</li>
-    <li class="selection__check-word  selection-hidden" id='letter-11'>K</li>
-    <li class="selection__check-word  selection__empty" id='letter-12'></li>
-    <li class="selection__check-word  selection-hidden" id='letter-13'>T</li>
-    <li class="selection__check-word  selection-hidden" id='letter-14'>O</li>
-    <li class="selection__check-word  selection__empty" id='letter-15'></li>
-    <li class="selection__check-word  selection-hidden" id='letter-16'>H</li>
-    <li class="selection__check-word  selection-hidden" id='letter-17'>O</li>
-    <li class="selection__check-word  selection-hidden" id='letter-18'>M</li>
-    <li class="selection__check-word  selection-hidden" id='letter-19'>E</li>
+    <li *ngFor="let letter of arrayOfLetters"
+        [ngClass]="{
+            'selection__check-letter': true,
+            'selection-shown': letter.shown
+        }">
+      {{letter.value}}
+    </li>
   </ul>
   <div class="selection__btn-sound"></div>
   <ul class="selection__pick-list">
-    <li class="selection__pick-word">C</li>
-    <li class="selection__pick-word">E</li>
-    <li class="selection__pick-word">L</li>
-    <li class="selection__pick-word">W</li>
-    <li class="selection__pick-word">O</li>
-    <li class="selection__pick-word">C</li>
-    <li class="selection__pick-word">E</li>
-    <li class="selection__pick-word">K</li>
-    <li class="selection__pick-word">A</li>
-    <li class="selection__pick-word">M</li>
-    <li class="selection__pick-word">B</li>
+    <li *ngFor="let letter of arrayOfPickLetters"
+        [@errorState]="letter.error"
+        [ngClass]="{
+            'selection__pick-word': true,
+            'selection-wrong': letter.error}"
+        [style.display]="letter.shown ? 'block' : 'none'"
+        (click)="onPickLetterClick(letter)">
+      {{letter.value}}
+    </li>
   </ul>
 </section>

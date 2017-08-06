@@ -1,4 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 
 import {TrainingModule} from './training/training.module';
@@ -13,6 +14,7 @@ import { MainBarComponent } from './main-bar/main-bar.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     TrainingModule,
     AppRoutingModule
   ],

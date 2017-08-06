@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto');
 
-.selection-hidden {
-  color: white;
+.selection-shown {
+  color: #CA5727 !important;
 }
 
 .selection__empty {
@@ -74,14 +74,14 @@
   margin: 60px 0;
 }
 
-.selection__check-word {
+.selection__check-letter {
   border: 1px solid gray;
   padding: 4px;
   width: 48px;
   text-align: center;
   margin: 2px 2px;
   border-radius: 2px;
-  color: #CA5727;
+  color: white;
 }
 
 .selection__btn-sound {

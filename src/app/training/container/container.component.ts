@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ITranslateObject} from "../../interfaces";
 
 @Component({
   selector: 'app-container',
@@ -7,7 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContainerComponent implements OnInit {
 
-  constructor() { }
+  public currentTranslateObject: ITranslateObject = {
+    main: {
+      foreign: 'welcome',
+      native: 'добро пожаловать'
+    },
+    translates: [
+      {
+        foreign: 'hello',
+        native: 'привет'
+      },
+      {
+        foreign: 'welcome',
+        native: 'добро пожаловать'
+      },
+      {
+        foreign: 'good morning',
+        native: 'доброе утро'
+      },
+      {
+        foreign: 'good bye',
+        native: 'до свидания'
+      }
+    ]
+  };
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

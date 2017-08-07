@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto');
+
+.select-word-wrong {
+  background-color: red !important;
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.select-word {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  max-width: 80%;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 gray,
+  0 2px 6px 0 gray;
+  background-color: white;
+  margin: 30px auto 0 auto;
+  color: #454545;
+  padding: 20px;
+}
+
+.select-word__title-main {
+  margin: 0;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  color: #59595a;
+  border-bottom: 1px solid #59595a;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.select-word__check-word {
+  color: #CA5727;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.select-word__btn-sound {
+  width: 96px;
+  height: 96px;
+  padding: 10px;
+  border-radius: 4px;
+  background: #D8100D url("http://res.cloudinary.com/dq2s2ibrg/image/upload/v1501702100/volume_white_xs1cyj.png") no-repeat center;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 gray,
+  0 2px 6px 0 gray;
+}
+
+.select-word__pick-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+  font-size: 24px;
+  justify-content: center;
+  margin: 60px 0 60px 0;
+}
+
+.select-word__pick-word {
+  padding: 0 15px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 4px;
+  color: white;
+  background-color: #CA5727;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  font-family: 'Roboto', sans-serif;
+  overflow-wrap: break-word;
+  box-shadow: 0 1px 2px 0 gray,
+  0 2px 6px 0 gray;
+}

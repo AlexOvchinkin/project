@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {SelectWordService} from "./select-word.service";
-import {ITranslateObject} from "../../../interfaces";
+import {ITranslateObject, IWord} from "../../../interfaces";
 
 @Component({
   selector: 'app-select-word',
@@ -12,12 +12,21 @@ export class SelectWordComponent implements OnInit {
 
   @Input() translateObject: ITranslateObject;
 
-  public checkWord: string;
+  public checkWord: IWord;
+  public pickWords: IWord[];
 
   constructor(private selectWordService: SelectWordService) { }
 
   ngOnInit() {
-    this.checkWord = this.translateObject.main.foreign;
+    this.selectWordService.init(this.translateObject);
+    this.checkWord = this.translateObject.main;
+
+    this.selectWordService.updateStream$$
+      .subscribe((words) => this.pickWords = words);
+  }
+
+  onWordClick(word: IWord): void {
+    this.selectWordService.check(word);
   }
 
 }

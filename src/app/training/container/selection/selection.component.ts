@@ -52,12 +52,6 @@ export class SelectionComponent implements OnInit {
 
   onPickLetterClick(value: ILetter) {
     this.selectionService.checkLetter(value);
-
-    setTimeout(() => {
-      this.arrayOfPickLetters.forEach(item => {
-        item.error = false;
-      });
-    }, 300);
   }
 
 }

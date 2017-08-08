@@ -10,25 +10,35 @@ export class ContainerComponent implements OnInit {
 
   public currentTranslateObject: ITranslateObject = {
     main: {
+      id: 0,
       foreign: 'welcome',
-      native: 'добро пожаловать'
+      native: 'добро пожаловать',
+      error: false
     },
     translates: [
       {
+        id: 1,
         foreign: 'hello',
-        native: 'привет'
+        native: 'привет',
+        error: false
       },
       {
+        id: 0,
         foreign: 'welcome',
-        native: 'добро пожаловать'
+        native: 'добро пожаловать',
+        error: false
       },
       {
+        id: 2,
         foreign: 'good morning',
-        native: 'доброе утро'
+        native: 'доброе утро',
+        error: false
       },
       {
+        id: 3,
         foreign: 'good bye',
-        native: 'до свидания'
+        native: 'до свидания',
+        error: false
       }
     ]
   };

@@ -1,6 +1,8 @@
 export interface IWord {
+  id: number,
   foreign: string,
-  native: string
+  native: string,
+  error: boolean
 }
 
 export interface ITranslateObject {

@@ -11,6 +11,8 @@ import "rxjs/add/operator/toArray";
 import "rxjs/add/observable/of";
 import "rxjs/add/operator/do";
 import "rxjs/add/operator/reduce";
+import {switchMap} from "rxjs/operator/switchMap";
+import {toArray} from "rxjs/operator/toArray";
 
 export interface ILetter {
   id: number,
@@ -27,6 +29,7 @@ export class SelectionService {
 
   public checkStream$;
   public pickStream$;
+  private cleanUpStream: Subject<ILetter[]>;
   public updateStream$$;
   public updatePickStream$$;
 
@@ -43,6 +46,9 @@ export class SelectionService {
     this.pickStream$ = this.getPickStream(this.pickArray, this.checkArray);
     this.pickStream$.subscribe(this.updatePickStream$$);
 
+    this.cleanUpStream = this.getCleanUpStream(this.pickArray) as Subject<ILetter[]>;
+    this.cleanUpStream.subscribe(this.updatePickStream$$);
+
     this.checkStream$ = this.getCheckStream(this.checkArray);
     this.checkStream$.subscribe(this.updateStream$$);
   }
@@ -50,6 +56,7 @@ export class SelectionService {
   public checkLetter(value: ILetter) {
     this.pickStream$.next(value);
     this.checkStream$.next(value);
+    this.cleanUpStream.next();
   }
 
   private getCheckStream(checkArray: ILetter[]): Observable<ILetter[]> {
@@ -100,6 +107,20 @@ export class SelectionService {
               .toArray();
           })
       })
+  }
+
+  private getCleanUpStream(pickArray: ILetter[]): Observable<ILetter[]> {
+    return new Subject()
+      .switchMap(() => {
+        return Observable
+          .from(pickArray)
+          .delay(500)
+          .map(item => {
+            item.error = false;
+            return item;
+          })
+          .toArray();
+      });
   }
 
   private generateCheckArray(word: string): ILetter[] {
